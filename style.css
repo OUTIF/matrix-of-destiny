@@ -1,0 +1,195 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+
+main {
+    width: 100%;
+    max-width: 800px; /* Caps expansion on ultra-wide monitors */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#input-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows inputs to stack on narrow screens */
+    justify-content: center;
+    gap: 10px;
+    background: #1f2833;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    width: 100%; 
+}
+
+input {
+    flex: 1 1 30%;
+    min-width: 80px;
+    padding: 10px;
+    background: #0b0c10;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    text-align: center;
+}
+
+button {
+    flex: 1 1 100%;
+    padding: 10px 20px;
+    background-color: #e2e7e7;
+    color: #0b0c10;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover { 
+    background-color: #5fe4db; 
+}
+
+#matrix-container {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 1 / 1; /* Locks the square aspect ratio mathematically */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.matrix-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.matrix-line {
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    opacity: 0.3; 
+}
+
+.node-text {
+    font-size: 20px;
+    font-weight: bold;
+    fill: #111111; 
+    text-anchor: middle; 
+    alignment-baseline: middle; 
+}
+
+
+/* =========================================
+   7. PROFESSIONAL FOOTER
+   ========================================= */
+.app-footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: #0b0c10;
+    padding: 2rem 10%; /* Scales dynamically based on screen width */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Flexbox container separating left and right */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-left h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    color: #a0aec0; /* Subdued text color for the subtitle */
+}
+
+.footer-right {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Styling the circular social buttons */
+.footer-right a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #2d3748;
+    color: #ffffff;
+    border-radius: 50%; /* Makes the buttons perfect circles */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover animation for the buttons */
+.footer-right a:hover {
+    background-color: #4a5568;
+    transform: translateY(-3px); /* Slightly lifts the button */
+}
+
+/* The horizontal line */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #2d3748;
+    margin-bottom: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+/* Responsive adjustment: Stack items on screens smaller than 600px */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.fill-yellow { fill: #f39c12; }
+.fill-purple { fill: #9b59b6; }
+.fill-red    { fill: #e74c3c; }
+.fill-blue   { fill: #3498db; }
+.fill-green  { fill: #2ecc71; }
+.fill-cyan   { fill: #00cec9; }
+.fill-orange { fill: #e67e22; }
+.fill-white  { fill: #ffffff; }

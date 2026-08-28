@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix of destiny</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+
+    <main>
+      <h1>Matrix of Destiny</h1>
+
+      <section id="input-section">
+        <input type="text" id="inputDay" placeholder="Day" min="1" max="31">
+        <input type="text" id="inputMonth" placeholder="Month" min="1" max="12">
+        <input type="text" id="inputYear" placeholder="Year">
+        <button id="calcButton">Calculate</button>
+      </section>
+      <section id="matrix-container">
+    <svg viewBox="0 0 800 800" class="matrix-svg">
+    
+    <!-- 1. THE STRUCTURAL LINES -->
+    <line x1="400" y1="100" x2="400" y2="700" class="matrix-line" />
+    <line x1="100" y1="400" x2="700" y2="400" class="matrix-line" />
+    <line x1="188" y1="188" x2="612" y2="612" class="matrix-line" />
+    <line x1="188" y1="612" x2="612" y2="188" class="matrix-line" />
+
+    <!-- The Direct Square (Diamond) -->
+    <polygon points="400,100 700,400 400,700 100,400" class="matrix-line" fill="none" />
+    
+    <!-- The Diagonal Square (Rotated) -->
+    <polygon points="188,188 612,188 612,612 188,612" class="matrix-line" fill="none" />
+
+    <!-- Dashed Wealth & Relationship Channel Line -->
+    <line x1="400" y1="592" x2="592" y2="400" class="matrix-line" stroke-dasharray="6,6" opacity="0.6" />
+
+
+    <!-- 2. THE 31 NODES -->
+    
+    <!-- === Center Base (Node 8) === -->
+    <circle cx="400" cy="400" r="36" class="fill-yellow" />
+    <text id="node-8" x="400" y="402" class="node-text" style="font-size: 24px;">?</text>
+
+    <!-- === Outer Base Points (0, 1, 2, 3) === -->
+    <circle cx="100" cy="400" r="30" class="fill-purple" />
+    <text id="node-0" x="100" y="402" class="node-text">?</text>
+
+    <circle cx="400" cy="100" r="30" class="fill-purple" />
+    <text id="node-1" x="400" y="102" class="node-text">?</text>
+
+    <circle cx="700" cy="400" r="30" class="fill-red" />
+    <text id="node-2" x="700" y="402" class="node-text">?</text>
+
+    <circle cx="400" cy="700" r="30" class="fill-red" />
+    <text id="node-3" x="400" y="702" class="node-text">?</text>
+
+    <!-- === Outer Ancestral Diagonal Tips (4, 5, 6, 7) === -->
+    <circle cx="188" cy="188" r="30" class="fill-white" />
+    <text id="node-4" x="188" y="190" class="node-text">?</text>
+
+    <circle cx="612" cy="188" r="30" class="fill-white" />
+    <text id="node-5" x="612" y="190" class="node-text">?</text>
+
+    <circle cx="612" cy="612" r="30" class="fill-white" />
+    <text id="node-6" x="612" y="614" class="node-text">?</text>
+
+    <circle cx="188" cy="612" r="30" class="fill-white" />
+    <text id="node-7" x="188" y="614" class="node-text">?</text>
+
+
+    <!-- === THE STRADDLED INTERSECTION PAIRS (The Red Circles) === -->
+    
+    <!-- Top Axis Intersection (Anchor: 400, 188) -->
+    <circle cx="400" cy="170" r="16" class="fill-white" />
+    <text id="node-15" x="400" y="172" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="400" cy="206" r="16" class="fill-cyan" />
+    <text id="node-11" x="400" y="208" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- Bottom Axis Intersection (Anchor: 400, 612) -->
+    <circle cx="400" cy="594" r="16" class="fill-yellow" />
+    <text id="node-13" x="400" y="596" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="400" cy="630" r="16" class="fill-white" />
+    <text id="node-17" x="400" y="632" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- Left Axis Intersection (Anchor: 188, 400) -->
+    <circle cx="170" cy="400" r="16" class="fill-blue" />
+    <text id="node-14" x="170" y="402" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="206" cy="400" r="16" class="fill-cyan" />
+    <text id="node-10" x="206" y="402" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- Right Axis Intersection (Anchor: 612, 400) -->
+    <circle cx="594" cy="400" r="16" class="fill-yellow" />
+    <text id="node-12" x="594" y="402" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="630" cy="400" r="16" class="fill-white" />
+    <text id="node-16" x="630" y="402" class="node-text" style="font-size: 14px;">?</text>
+
+
+    <!-- === Diagonal Intersections (Offset by 13px on X and Y to match the 45-degree angle) === -->
+    
+    <!-- Top-Left Diagonal Intersection (Anchor: 250, 250) -->
+    <circle cx="237" cy="237" r="16" class="fill-white" />
+    <text id="node-25" x="237" y="239" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="263" cy="263" r="16" class="fill-white" />
+    <text id="node-21" x="263" y="265" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- Top-Right Diagonal Intersection (Anchor: 550, 250) -->
+    <circle cx="563" cy="237" r="16" class="fill-white" />
+    <text id="node-26" x="563" y="239" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="537" cy="263" r="16" class="fill-white" />
+    <text id="node-22" x="537" y="265" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- Bottom-Right Diagonal Intersection (Anchor: 550, 550) -->
+    <circle cx="563" cy="563" r="16" class="fill-white" />
+    <text id="node-27" x="563" y="565" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="537" cy="537" r="16" class="fill-white" />
+    <text id="node-23" x="537" y="539" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- Bottom-Left Diagonal Intersection (Anchor: 250, 550) -->
+    <circle cx="237" cy="563" r="16" class="fill-white" />
+    <text id="node-28" x="237" y="565" class="node-text" style="font-size: 14px;">?</text>
+    
+    <circle cx="263" cy="537" r="16" class="fill-white" />
+    <text id="node-24" x="263" y="539" class="node-text" style="font-size: 14px;">?</text>
+
+
+    <!-- === Deep Inner Nodes (Recalculated to stay centered between the new inner nodes and Center 400) === -->
+    <circle cx="400" cy="303" r="16" class="fill-green" />
+    <text id="node-30" x="400" y="305" class="node-text" style="font-size: 14px;">?</text>
+
+    <circle cx="303" cy="400" r="16" class="fill-green" />
+    <text id="node-29" x="303" y="402" class="node-text" style="font-size: 14px;">?</text>
+
+    <circle cx="497" cy="400" r="16" class="fill-green" />
+    <text id="node-9" x="497" y="402" class="node-text" style="font-size: 14px;">?</text>
+
+    <!-- === Wealth & Relationship Channel (Recalculated to anchor correctly) === -->
+    <circle cx="450" cy="544" r="16" class="fill-white" />
+    <text id="node-19" x="450" y="546" class="node-text" style="font-size: 14px;">?</text>
+
+    <circle cx="497" cy="497" r="16" class="fill-white" />
+    <text id="node-18" x="497" y="499" class="node-text" style="font-size: 14px;">?</text>
+
+    <circle cx="544" cy="450" r="16" class="fill-white" />
+    <text id="node-20" x="544" y="452" class="node-text" style="font-size: 14px;">?</text>
+</svg>
+</section>
+
+    </main>
+    <!-- Add this footer block -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            
+            <!-- Left Side: Identity -->
+            <div class="footer-left">
+                <h3>YH</h3>
+            </div>
+            
+            <!-- Right Side: Social Icons -->
+            <div class="footer-right">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            
+        </div>
+        
+        <!-- The Horizontal Divider Line -->
+        <hr class="footer-divider">
+        
+        <!-- Bottom Section: Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 YH. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
